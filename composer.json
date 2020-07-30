@@ -1,0 +1,37 @@
+{
+  "name": "studosi/alexandria",
+  "description": "Alexandria; the repository manager extension for Flarum - manage GitHub repositories and integrate links seamlessly",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "Apache-2.0",
+  "require": {
+    "flarum/core": "^0.1.0-beta.8"
+  },
+  "authors": [
+    {
+      "name": "Studosi",
+      "email": "flarum_repo@studosi.net",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Studosi\\Alexandria\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Alexandria",
+      "icon": {
+        "name": "",
+        "backgroundColor": "",
+        "color": ""
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
