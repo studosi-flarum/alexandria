@@ -21,18 +21,18 @@ namespace Studosi\Alexandria\Api\Controllers\LinkControllers;
 use Flarum\Api\Controller\AbstractCreateController;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
-use Studosi\Alexandria\Api\Serializers\LinkSerializer;
-use Studosi\Alexandria\Commands\LinkCommands\{
-    CreateLink,
-    DeleteLink,
-    UpdateLink,
+use Studosi\Alexandria\Api\Serializers\ScopeSerializer;
+use Studosi\Alexandria\Commands\ScopeCommands\{
+    CreateScope,
+    DeleteScope,
+    UpdateScope,
 };
-use Studosi\Alexandria\Link;
+use Studosi\Alexandria\Scope;
 use Tobscure\JsonApi\Document;
 
-class CreateLinkController extends AbstractCreateController
+class CreateScopeController extends AbstractCreateController
 {
-    public $serializer = LinkSerializer::class;
+    public $serializer = ScopeSerializer::class;
     protected $bus;
 
     public function __construct(Dispatcher $bus)
@@ -43,7 +43,7 @@ class CreateLinkController extends AbstractCreateController
     protected function data(ServerRequestInterface $request, Document $document)
     {
         return $this->bus->dispatch(
-            new CreateLink(
+            new CreateScope(
                 $request->getAttribute("actor"),
                 array_get($request->getParsedBody(), "data", []),
             ),
@@ -51,7 +51,7 @@ class CreateLinkController extends AbstractCreateController
     }
 }
 
-class DeleteLinkController extends AbstractDeleteController
+class DeleteScopeController extends AbstractDeleteController
 {
     protected $bus;
 
@@ -63,7 +63,7 @@ class DeleteLinkController extends AbstractDeleteController
     protected function delete(ServerRequestInterface $request)
     {
         $this->bus->dispatch(
-            new DeleteLink(
+            new DeleteScope(
                 array_get($request->getQueryParams(), "id"),
                 $request->getAttribute("actor"),
             ),
@@ -71,19 +71,19 @@ class DeleteLinkController extends AbstractDeleteController
     }
 }
 
-class ListLinksController extends AbstractListController
+class ListScopesController extends AbstractListController
 {
-    public $serializer = LinkSerializer::class;
+    public $serializer = ScopeSerializer::class;
 
     protected function data(ServerRequestInterface $request, Document $document)
     {
-        return Link::all();
+        return Scope::all();
     }
 }
 
-class UpdateLinkController extends AbstractShowController
+class UpdateScopeController extends AbstractShowController
 {
-    public $serializer = LinkSerializer::class;
+    public $serializer = ScopeSerializer::class;
     protected $bus;
 
     public function __construct(Dispatcher $bus)
@@ -94,7 +94,7 @@ class UpdateLinkController extends AbstractShowController
     protected function data(ServerRequestInterface $request, Document $document)
     {
         return $this->bus->dispatch(
-            new UpdateLink(
+            new UpdateScope(
                 array_get($request->getQueryParams(), "id"),
                 $request->getAttribute("actor"),
                 array_get($request->getParsedBody(), "data", []),

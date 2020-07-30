@@ -1,12 +1,19 @@
 <?php
 
 /*
- * This file is part of studosi/alexandria.
+ * Copyright 2020 Studosi
  *
- * Copyright (c) 2020 Studosi.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 namespace Studosi\Alexandria;
@@ -15,8 +22,14 @@ use Flarum\Extend;
 use Studosi\Alexandria\Api\Controllers\LinkControllers\{
     CreateLinkController,
     DeleteLinkController,
-    ListRulesController,
+    ListLinksController,
     UpdateLinkController,
+};
+use Studosi\Alexandria\Api\Controllers\ScopeControllers\{
+    CreateScopeController,
+    DeleteScopeController,
+    ListScopesController,
+    UpdateScopeController,
 };
 
 return [
@@ -31,21 +44,41 @@ return [
         ->get(
             '/studosi-alexandria_links',
             'studosi-alexandria_links.index',
-            ListRulesController::class,
+            ListLinksController::class,
+        )
+        ->get(
+            '/studosi-alexandria_scopes',
+            'studosi-alexandria_scopes.index',
+            ListScopesController::class,
         )
         ->post(
             '/studosi-alexandria_links',
             'studosi-alexandria_links.create',
             CreateLinkController::class,
         )
+        ->post(
+            '/studosi-alexandria_scopes',
+            'studosi-alexandria_scopes.create',
+            CreateScopeController::class,
+        )
         ->delete(
             '/studosi-alexandria_links/{id}',
             'studosi-alexandria_links.delete',
             DeleteLinkController::class,
         )
+        ->delete(
+            '/studosi-alexandria_scope/{id}',
+            'studosi-alexandria_scopes.delete',
+            DeleteScopeController::class,
+        )
         ->patch(
             '/studosi-alexandria_links/{id}',
             'studosi-alexandria_links.update',
             UpdateLinkController::class,
+        )
+        ->patch(
+            '/studosi-alexandria_scopes/{id}',
+            'studosi-alexandria_scopes.update',
+            UpdateScopeController::class,
         ),
 ];
