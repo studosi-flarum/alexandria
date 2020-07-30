@@ -22,11 +22,7 @@ use Flarum\Api\Controller\AbstractCreateController;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 use Studosi\Alexandria\Api\Serializers\LinkSerializer;
-use Studosi\Alexandria\Commands\LinkCommands\{
-    CreateLink,
-    DeleteLink,
-    UpdateLink,
-};
+use Studosi\Alexandria\Commands\LinkCommands\{CreateLink, DeleteLink, UpdateLink};
 use Studosi\Alexandria\Link;
 use Tobscure\JsonApi\Document;
 

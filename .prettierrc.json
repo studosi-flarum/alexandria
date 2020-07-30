@@ -3,7 +3,7 @@
     "endOfLine": "lf",
     "noBracketSpacing": false,
     "phpVersion": "7.4",
-    "printWidth": 80,
+    "printWidth": 88,
     "quoteProps": "consistent",
     "semi": true,
     "singleQuote": false,

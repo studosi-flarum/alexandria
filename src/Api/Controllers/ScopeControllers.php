@@ -22,11 +22,7 @@ use Flarum\Api\Controller\AbstractCreateController;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 use Studosi\Alexandria\Api\Serializers\ScopeSerializer;
-use Studosi\Alexandria\Commands\ScopeCommands\{
-    CreateScope,
-    DeleteScope,
-    UpdateScope,
-};
+use Studosi\Alexandria\Commands\ScopeCommands\{CreateScope, DeleteScope, UpdateScope};
 use Studosi\Alexandria\Scope;
 use Tobscure\JsonApi\Document;
 

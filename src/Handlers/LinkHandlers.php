@@ -19,11 +19,7 @@
 namespace Studosi\Alexandria\Handlers\LinkHandlers;
 
 use Flarum\User\AssertPermissionTrait;
-use Studosi\Alexandria\Commands\LinkCommands\{
-    CreateLink,
-    DeleteLink,
-    UpdateLink,
-};
+use Studosi\Alexandria\Commands\LinkCommands\{CreateLink, DeleteLink, UpdateLink};
 use Studosi\Alexandria\Link;
 use Studosi\Alexandria\Validators\LinkValidator;
 
@@ -113,9 +109,7 @@ class UpdateLinkHandler
             $link->updateNick($attributes["nick"]);
         }
 
-        $this->validator->assertValid(
-            array_merge($link->getDirty(), $validate),
-        );
+        $this->validator->assertValid(array_merge($link->getDirty(), $validate));
         $link->save();
 
         return $link;

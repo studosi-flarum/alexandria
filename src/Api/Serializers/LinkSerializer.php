@@ -29,9 +29,7 @@ class LinkSerializer extends AbstractSerializer
     {
         if (!($link instanceof Link)) {
             throw new InvalidArgumentException(
-                get_class($this) .
-                    " can only serialize instances of " .
-                    Link::class,
+                get_class($this) . " can only serialize instances of " . Link::class,
             );
         }
 

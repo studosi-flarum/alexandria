@@ -29,9 +29,7 @@ class LinkSerializer extends AbstractSerializer
     {
         if (!($scope instanceof Scope)) {
             throw new InvalidArgumentException(
-                get_class($this) .
-                    " can only serialize instances of " .
-                    Scope::class,
+                get_class($this) . " can only serialize instances of " . Scope::class,
             );
         }
 

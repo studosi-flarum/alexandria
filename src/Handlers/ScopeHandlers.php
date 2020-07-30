@@ -19,11 +19,7 @@
 namespace Studosi\Alexandria\Handlers\ScopeHandlers;
 
 use Flarum\User\AssertPermissionTrait;
-use Studosi\Alexandria\Commands\ScopeCommands\{
-    CreateScope,
-    DeleteScope,
-    UpdateScope,
-};
+use Studosi\Alexandria\Commands\ScopeCommands\{CreateScope, DeleteScope, UpdateScope};
 use Studosi\Alexandria\Scope;
 use Studosi\Alexandria\Validators\ScopeValidator;
 
@@ -104,10 +100,7 @@ class UpdateScopeHandler
             $scope->updateType($attributes["type"]);
         }
 
-        if (
-            isset($attributes["upload_path"]) &&
-            "" !== $attributes["upload_path"]
-        ) {
+        if (isset($attributes["upload_path"]) && "" !== $attributes["upload_path"]) {
             $validate["upload_path"] = $attributes["upload_path"];
             $scope->updateUploadPath($attributes["upload_path"]);
         }
@@ -125,9 +118,7 @@ class UpdateScopeHandler
             $scope->updateName($attributes["name"]);
         }
 
-        $this->validator->assertValid(
-            array_merge($scope->getDirty(), $validate),
-        );
+        $this->validator->assertValid(array_merge($scope->getDirty(), $validate));
         $scope->save();
 
         return $scope;
