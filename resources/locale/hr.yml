@@ -1,0 +1,9 @@
+studosi-alexandria:
+  admin:
+    nav:
+      title: "Alexandria"
+      desc: "Neprekidno integrirajte GitHub repozitorije"
+
+  forum:
+    error:
+      generic: "Nešto je pošlo po zlu. Molimo kontaktirajte administratora ove zajednice"

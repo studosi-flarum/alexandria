@@ -7,12 +7,17 @@
   "type": "flarum-extension",
   "license": "Apache-2.0",
   "require": {
-    "flarum/core": "^0.1.0-beta.8"
+    "flarum/core": "^0.1.0-beta.13"
   },
   "authors": [
     {
       "name": "Studosi",
       "email": "flarum_repo@studosi.net",
+      "role": "Developer"
+    },
+    {
+      "name": "Yalfoosh",
+      "email": "headsouldev@gmail.com",
       "role": "Developer"
     }
   ],
@@ -25,9 +30,9 @@
     "flarum-extension": {
       "title": "Alexandria",
       "icon": {
-        "name": "",
-        "backgroundColor": "",
-        "color": ""
+        "name": "fas fa-atlas",
+        "backgroundColor": "#43ada9",
+        "color": "ffffff"
       }
     },
     "flagrow": {

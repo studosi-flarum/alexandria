@@ -1,0 +1,14 @@
+{
+    "disableLanguages": [],
+    "endOfLine": "lf",
+    "noBracketSpacing": false,
+    "phpVersion": "7.4",
+    "printWidth": 80,
+    "quoteProps": "consistent",
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "trailingCommaPHP": true,
+    "useTabs": false
+}

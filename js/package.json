@@ -10,5 +10,9 @@
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.14.3",
+    "prettier": "^2.0.5"
   }
 }

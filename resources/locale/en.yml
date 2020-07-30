@@ -1,0 +1,9 @@
+studosi-alexandria:
+  admin:
+    nav:
+      title: Alexandria
+      desc: Continuosly integrate GitHub repositories
+
+  forum:
+    error:
+      generic: "Something went wrong. Please contact this community's administrator."
